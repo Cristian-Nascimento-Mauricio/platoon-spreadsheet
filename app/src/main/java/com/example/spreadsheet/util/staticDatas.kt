@@ -15,6 +15,7 @@ fun militariesState():Map<String,Int> {
         "Presente" to R.color.Green,
         "Ausente" to R.color.Red,
         "Dispensado" to R.color.OrangeRed,
+        "Férias" to R.color.OrangeRed,
         "Em serviço" to R.color.Yellow,
         "Saindo de serviço" to R.color.Yellow,
         "Em missão" to R.color.Yellow,

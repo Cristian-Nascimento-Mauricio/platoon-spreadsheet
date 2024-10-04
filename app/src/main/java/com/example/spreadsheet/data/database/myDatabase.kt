@@ -13,7 +13,7 @@ import com.example.spreadsheet.util.pelList
 class myDatabase(context: Context) : SQLiteOpenHelper(context , DATABASE_NAME, null , DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 15
+        private const val DATABASE_VERSION = 16
         private const val DATABASE_NAME = "database.db"
         const val TABLE_NAME = "militaries"
         const val COLUMN_ID = "id"

@@ -1,5 +1,8 @@
 package com.example.spreadsheet
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
@@ -44,6 +47,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun copyList(view: View){
+        if (!::adapter.isInitialized)
+            return
+
+        Toast.makeText(this,"Texto copiado",Toast.LENGTH_LONG).show()
+
+        val copyBroad = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+        val clip = ClipData.newPlainText("Copied text",adapter.convertListToString())
+
+        copyBroad.setPrimaryClip(clip)
+
+    }
 
 
 

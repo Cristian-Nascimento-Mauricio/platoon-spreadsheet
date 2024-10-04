@@ -1,6 +1,7 @@
 package com.example.spreadsheet
 
 import android.annotation.SuppressLint
+import android.icu.util.LocaleData
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spreadsheet.data.controllers.controllersMilitary
 import com.example.spreadsheet.util.militariesState
 import com.example.spreadsheet.util.military
+import java.time.LocalDate
+import java.time.LocalTime
 
 class Adapter( private val controllersMilitary: controllersMilitary) : RecyclerView.Adapter<Adapter.myAdapter>() {
 
@@ -94,6 +97,38 @@ class Adapter( private val controllersMilitary: controllersMilitary) : RecyclerV
     }
     private fun defineColorForEachMilitarState(state: String): Int {
         return militariesState().getOrDefault(state,R.color.CornflowerBlue)
+
+    }
+
+    private fun convertDateToStringDate():String{
+
+        //class LocalDate and LocalTime using to get date now and time now
+        val date = LocalDate.now()
+        val time = LocalTime.now()
+
+        var hour = String.format("%02d",time.hour)
+        var minute = String.format("%02d",time.minute)
+
+        var month = String.format("%02d",date.monthValue)
+        var day = String.format("%02d",date.dayOfMonth)
+        //get only last number of year
+        var year = date.year % 2000
+
+        return "${hour}:${minute} - ${day}/${month}/${year}"
+
+    }
+
+    fun convertListToString():String{
+
+        var text:String = "*Falta do Pelcom*\n \n*Data:* ${convertDateToStringDate()}  \n"
+
+        list.forEach { it ->
+            if (it.state != "definir")
+                text = text + "\n${it.patent} ${it.warName}: *${it.state}*"
+        }
+
+
+        return text
 
     }
 
