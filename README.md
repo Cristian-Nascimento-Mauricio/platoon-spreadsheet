@@ -1,4 +1,4 @@
-# The platoon-spreadsheet
+# The platoon spreadsheet
 
 <br>
 
