@@ -5,20 +5,7 @@ import com.example.spreadsheet.R
 //Add here miliaries of your platoon
 fun pelList():List<military>{
     return arrayListOf(
-        military("2ºTEN","Fernandes"),
-        military("3ºSGT","Leal"),
-        military("3ºSGT","Menezes"),
-        military("3ºSGT","Camargo"),
-        military("CB","Campos"),
-        military("CB","Lima"),
-        military("CB","De Souza"),
-        military("CB","Bento"),
-        military("SD","Amaro"),
-        military("SD.EV","Cristian"),
-        military("SD.EV","Luan Castro"),
-        military("SD.EV","Boleli"),
-        military("SD.EV","Luiz Miguel"),
-        military("SD.EV","Gustavo")
+
 
         )
 }
